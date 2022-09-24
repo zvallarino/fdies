@@ -26,7 +26,6 @@ ChartJS.register(
 function Graph({diseases}) {
 
     const data_sets = datasetCreator(diseases)
-
           
       const data = {
         datasets: data_sets

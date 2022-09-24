@@ -141,7 +141,6 @@ export default function Home({ diseases }) {
 
  
   useEffect(()=>{
-    console.log(filterByStartDate(exampleStartDate,diseases))
   },[])
 
   return (
