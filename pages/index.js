@@ -1,13 +1,19 @@
+import { data } from 'autoprefixer'
 import { collection, getDocs } from 'firebase/firestore'
 import Head from 'next/head'
 import Image from 'next/image'
+import randomColor from 'randomcolor'
 import { useEffect } from 'react'
+import FullPage from '../components/FullPage'
+import Graph from '../components/Graph'
+import InputField from '../components/InputField'
 import { db } from '../firebase'
 import styles from '../styles/Home.module.css'
 
 export default function Home({ diseases }) {
   
   const wordsExample = ["HIV","E.Coli"]
+
   const filterByName = (words, arr) => {
       let answer = []
       for( const property in arr){
@@ -18,7 +24,7 @@ export default function Home({ diseases }) {
       return answer
   }
 
-  const exampleStartDate = "2020-01-01"
+  const exampleStartDate = "2021-01-01"
   const exampleEndDate = "2022-02-01"
 
   const filterByStartDate = (startDate,arr) => {
@@ -30,6 +36,8 @@ export default function Home({ diseases }) {
     }
     return answer
   }
+
+
 
   const filterbyEndDate = (endDate,arr) => {
     let answer = []
@@ -98,20 +106,47 @@ export default function Home({ diseases }) {
   const sortGraphObject = (obj) => {
     const answer = []
     for(const property in obj){
-      answer.push(obj[property].sort(function(a,b){
+      obj[property].sort(function(a,b){
         return new Date(a.x) - new Date(b.x)
-      }))
+      })
     }
-    return answer
+    return obj
   }
 
+  const createDataSetFromGO = (graphOb) => {
+    const dataset = []
+    for(const property in graphOb){
+      const obj = {
+        label: property,
+        data: graphOb[property],
+        borderWidth: 1,
+        fill: false,
+        borderColor: randomColor()
+      }
+      dataset.push(obj)
+    }
+    return dataset
+  }
+    
+
+  const listOfNames = (obj) => {
+    const answer = []
+    for(const property in obj){
+     if(!(answer.includes(obj[property].name))){
+      answer.push(obj[property].name)
+     }
+    }
+    return (answer)
+  }
+
+ 
   useEffect(()=>{
-    console.log(sortGraphObject(createGraphObject(filterByStartDateandEndDateandWords(exampleStartDate,exampleEndDate, wordsExample,diseases))))
+    console.log(filterByStartDate(exampleStartDate,diseases))
   },[])
 
   return (
-    <div className="text-3xl font-bold underline text-green-400">
-     Hello
+    <div className="text-3xl font-bold underline text-green-400 bg-white">
+     <FullPage diseases={diseases}/>
     </div>
   )
 }
