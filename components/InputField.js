@@ -1,5 +1,5 @@
 import { DateTime } from "luxon";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useContext } from "react";
 import {
   filterbyEndDate,
   filterByEndDateandWords,
@@ -9,7 +9,11 @@ import {
   filterByStartDateandWords,
 } from "./Functions";
 
-function InputField({ diseases, setDiseaseData }) {
+import { GraphContext } from '../contexts/GraphContext';
+
+function InputField() {
+
+  const { diseases, setDiseaseData, start, setStart } = useContext(GraphContext);
 
   const diseases_list = ["HIV", "Chlamydia", "E.Coli"];
   const time_list = [
@@ -29,7 +33,6 @@ function InputField({ diseases, setDiseaseData }) {
   const [inputObject, setInputObject] = useState ({})
 
   // Optional Input
-  const [start, setStart] = useState("");
   const [end, setEnd] = useState("");
 
   // DropDown Time

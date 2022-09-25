@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import Graph from './Graph'
 import InputField from './InputField'
+import Trends from './Trends'
 
-function FullPage({diseases}) {
-  const [diseasesData, setDiseaseData] = useState(diseases)
+function FullPage() {
   return (
     <>
-      <InputField setDiseaseData = {setDiseaseData} diseases = {diseases} />
-      <Graph diseases = {diseasesData}/>
+      <InputField />
+      <Graph/>
+      <Trends />
     </>
   )
 }
