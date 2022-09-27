@@ -20,14 +20,14 @@ export default function Home({ diseases }) {
 
 
   return (
-    <div className="text-3xl font-bold underline text-green-400 bg-white">
+    <>
      <GraphContext.Provider value = {{
       diseases,diseasesData,setDiseaseData,
       start, setStart, 
       }} >
       <FullPage />
     </GraphContext.Provider>
-    </div>
+    </>
   )
 }
 

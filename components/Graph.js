@@ -79,7 +79,9 @@ function Graph() {
       }
     
   return (
-    <Line options={options} data={data} />
+      <div className = "border border-8 border-blue-500 col-start-3 col-span-5 row-start-2 row-span-4 bg-white ">
+        <Line options={options} data={data} />
+      </div>
   )
 }
 
