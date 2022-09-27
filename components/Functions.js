@@ -53,6 +53,17 @@ export const filterByStartDateandWords = (startDate,words,arr) =>{
   return answer
 }
 
+
+export const filterByEndDateandWords = (endDate,words,arr) =>{
+  let answer = []
+  for( const property in arr){
+    if((arr[property].date< endDate)&&(words.includes(arr[property].name))){
+      answer.push(arr[property])
+    }
+  }
+  return answer
+}
+
 export const filterByStartDateandEndDateandWords = (startDate,endDate,words,arr) =>{
   let answer = []
   for( const property in arr){

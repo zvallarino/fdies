@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext} from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -11,6 +11,7 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import { datasetCreator } from './Functions'
+import { GraphContext } from '../contexts/GraphContext';
 
 ChartJS.register(
   CategoryScale,
@@ -23,10 +24,11 @@ ChartJS.register(
 );
 
 
-function Graph({diseases}) {
+function Graph() {
 
-    const data_sets = datasetCreator(diseases)
+  const { diseasesData } = useContext(GraphContext);
 
+    const data_sets = datasetCreator(diseasesData)
           
       const data = {
         datasets: data_sets
@@ -77,7 +79,9 @@ function Graph({diseases}) {
       }
     
   return (
-    <Line options={options} data={data} />
+      <div className = "border border-8 border-blue-500 col-start-3 col-span-5 row-start-2 row-span-4 bg-white ">
+        <Line options={options} data={data} />
+      </div>
   )
 }
 
