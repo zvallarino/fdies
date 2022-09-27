@@ -4,7 +4,7 @@ import { GraphContext } from "../contexts/GraphContext";
 import { filterByStartDateandWords } from "./Functions";
 
 function Trends() {
-  const { diseases, setDiseaseData } = useContext(GraphContext);
+  const { diseases, setDiseaseData, showTrends } = useContext(GraphContext);
 
   const three_month = DateTime.now().minus({ months: 4 }).toISO();
   const six_month = DateTime.now().minus({ months: 7 }).toISO();
@@ -34,6 +34,7 @@ function Trends() {
 
   const setGraphTrends = (e, start, word) => {
     setDiseaseData(filterByStartDateandWords(start, word, diseases));
+    showTrends(dogs => !dogs)
   };
 
   const trends = (data_per_month, date) => {
@@ -42,7 +43,7 @@ function Trends() {
         <>
           <div
             key={month[1]}
-            className="w-1/5 h-full rounded border justify-center shadow-lg max-w-sm hover:bg-red-400"
+            className="w-1/5 h-full  bg-white rounded border-t-4 mt-0.5 border-popBlue justify-center shadow-lg max-w-sm hover:bg-red-400 "
             onClick={(e) => setGraphTrends(e, date, month[1])}
           >
             <div className="h-1/3 border text-center py-3 font-bold">
@@ -74,15 +75,15 @@ function Trends() {
       return (
         <div
           key={periodTrend[1]}
-          className="border border-4 border-red-700 h-1/3"
+          className="border-t-4 border-popBlue h-1/3"
         >
-          <h1 className="text-center h-1/6">
+          <h1 className="text-center font-bold text-2xl text-popBlue h-1/6">
             {indexCheck(index)} Increasing Trends
           </h1>
-          <h2 className="text-center h-1/6">
+          <h2 className="text-center font-bold text-m text-popBlue h-1/6">
             Increasing at least 5% in {indexCheck(index)}
           </h2>
-          <div className="flex border border-4 border-blue-300 justify-around h-4/6">
+          <div className="flex border border-4 bg-gray-200 justify-around h-4/6">
             {trends(periodTrend[0], periodTrend[1])}
           </div>
         </div>
@@ -91,7 +92,7 @@ function Trends() {
   };
 
   return (
-    <div className="border border-4 border-red-800 h-full">
+    <div className="border-popBlue col-start-3 col-span-5 row-start-2 row-span-4 bg-white mr-4">
       {verticalRows()}
     </div>
   );

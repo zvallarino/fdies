@@ -1,6 +1,13 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Things to do/ Known Bugs
+
+1. Add Air Travel
+2. Add Project
+3. Mobile View
+3. Open this menu  doesn't switch to expected but does work.
+4. if you click on one disease more than once and error shows but it still works
+
 
 First, run the development server:
 

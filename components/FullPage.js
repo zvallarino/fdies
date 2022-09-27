@@ -1,16 +1,19 @@
-import React, { useState } from 'react'
-import Graph from './Graph'
-import InputField from './InputField'
-import Trends from './Trends'
+import React, { useContext } from "react";
+import Graph from "./Graph";
+import Header from "./Header";
+import InputField from "./InputField";
+import Trends from "./Trends";
+import { GraphContext } from "../contexts/GraphContext";
 
 function FullPage() {
+  const { trends } = useContext(GraphContext);
   return (
-    <div className = "bg-gray-200 border border-8 border-green-500 grid grid-cols-7 grid-rows-5 h-screen">
+    <div className="bg-gray-200 grid grid-cols-7 grid-rows-5 h-screen">
+      <Header />
       <InputField />
-      <Graph/>
-      {/* <Trends /> */}
+      {trends ? <Trends /> : <Graph />}
     </div>
-  )
+  );
 }
 
-export default FullPage
+export default FullPage;

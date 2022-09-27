@@ -10,20 +10,27 @@ import InputField from '../components/InputField'
 import { db } from '../firebase'
 import styles from '../styles/Home.module.css'
 import {GraphContext} from "../contexts/GraphContext"
+import { filterbyEndDate } from '../components/Functions'
+import { DateTime } from 'luxon'
 
-export default function Home({ diseases }) {
+export default function Home({ diseases,traveldata }) {
+  const today = DateTime.now().toISO()
+  const [diseasesData, setDiseaseData] = useState(filterbyEndDate(today, diseases))
 
-  const [diseasesData, setDiseaseData] = useState(diseases)
-
+  
   const [start, setStart] = useState("");
-
+  const [trends, showTrends] = useState(false)
+  const [travel, setTravel] = useState(true)
+  const [projection, setProjection] = useState(false)
 
 
   return (
     <>
      <GraphContext.Provider value = {{
       diseases,diseasesData,setDiseaseData,
-      start, setStart, 
+      start, setStart, trends, showTrends,
+      travel, setTravel, traveldata,
+      projection, setProjection
       }} >
       <FullPage />
     </GraphContext.Provider>
@@ -33,12 +40,17 @@ export default function Home({ diseases }) {
 
 
 export async function getServerSideProps(){
-  const stepOneRef = collection(db,"diseases")
-  const allData = await getDocs(stepOneRef)
-  const allDiseaseData = allData.docs.map(doc => doc.data())
+  const diseaseRef = collection(db,"diseases")
+  const allDisease = await getDocs(diseaseRef)
+  const allDiseaseData = allDisease.docs.map(doc => doc.data())
+
+  const travelRef = collection(db,"travelair")
+  const allTravel = await getDocs(travelRef)
+  const allTravelData = allTravel.docs.map(doc => doc.data())
   return {
       props:{
           diseases: allDiseaseData,
+          traveldata: allTravelData,
       }
   }
 }

@@ -1,3 +1,4 @@
+import { DateTime } from "luxon"
 import randomColor from "randomcolor"
 
 export const filterByName = (words, arr) => {
@@ -83,12 +84,14 @@ export const createGraphObject = (arr) => {
   const newObject = {}
   for(let i = 0; i<arr.length; i++){
     if(newObject[arr[i].name]){
+      let shortVar = DateTime.fromISO(arr[i].date).toLocaleString({month:"short",year:"numeric"})
       newObject[arr[i].name].push({
-        x:arr[i].date, y:arr[i].case_count
+        z:arr[i].date, y:arr[i].case_count, x:shortVar
       })
     }else{
+      let shortVar = DateTime.fromISO(arr[i].date).toLocaleString({month:"short",year:"numeric"})
       newObject[arr[i].name] = [{
-        x:arr[i].date, y:arr[i].case_count
+        z:arr[i].date, y:arr[i].case_count, x:shortVar
       }]
     }
   }
@@ -99,7 +102,7 @@ export const sortGraphObject = (obj) => {
   const answer = []
   for(const property in obj){
     obj[property].sort(function(a,b){
-      return new Date(a.x) - new Date(b.x)
+      return new Date(a.z) - new Date(b.z)
     })
   }
   return obj

@@ -1,4 +1,4 @@
-import React, { useContext} from 'react';
+import React, { useContext, useEffect} from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -26,10 +26,25 @@ ChartJS.register(
 
 function Graph() {
 
-  const { diseasesData } = useContext(GraphContext);
+  const { diseasesData, traveldata, travel, setDiseaseList } = useContext(GraphContext);
+
+  const examplearray1 = [{"name":"zack"},{"cat":"fblueish"}]
+
+  const examplearray2 = [{"name":"nick"},{"cat":"red"}]
+
+  // const travelFilter = (obj) => {
+  //   if(travel){
+  //      return {...diseasesData,diseasesData.filter((disease ) =>
+  //       disease.name == menu.category_id)}
+  //   }else {
+  //     return obj
+  //   }
+  // }
+
+  // useEffect(()=>console.log(travelFilter(diseasesData)),[])
 
     const data_sets = datasetCreator(diseasesData)
-          
+        
       const data = {
         datasets: data_sets
       }
@@ -41,17 +56,21 @@ function Graph() {
             intersect: false,
           },
           layout: {
-            padding: {
-                top: 0
-            }
+            padding: 20
         },
           
         plugins: {
             legend: {
                 display: true,
+                labels: {
+                  font: {
+                      size: 14,
+                      weight: "bold",
+                  }
+              }
             },
             title: {
-                display: true,
+                display: false,
                 text: 'Infection Disease Chart'
             },
         },
@@ -79,7 +98,7 @@ function Graph() {
       }
     
   return (
-      <div className = "border border-8 border-blue-500 col-start-3 col-span-5 row-start-2 row-span-4 bg-white ">
+      <div className = "border border-popBlue border-4 col-start-3 col-span-5 row-start-2 row-span-4 bg-white mb-8 mr-4">
         <Line options={options} data={data} />
       </div>
   )
