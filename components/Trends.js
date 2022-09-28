@@ -1,14 +1,15 @@
 import { DateTime } from "luxon";
 import React, { useContext } from "react";
 import { GraphContext } from "../contexts/GraphContext";
-import { filterByStartDateandWords } from "./Functions";
+import { filterByStartDateandEndDateandWords, filterByStartDateandWords } from "./Functions";
 
 function Trends() {
   const { diseases, setDiseaseData, showTrends } = useContext(GraphContext);
 
-  const three_month = DateTime.now().minus({ months: 4 }).toISO();
-  const six_month = DateTime.now().minus({ months: 7 }).toISO();
-  const one_year = DateTime.now().minus({ months: 13 }).toISO();
+  const three_month = DateTime.now().minus({ months: 3 }).toISO();
+  const six_month = DateTime.now().minus({ months: 6 }).toISO();
+  const one_year = DateTime.now().minus({ months: 12 }).toISO();
+  const today = DateTime.now().toISO()
 
   const three_month_data = [
     [3.4, "E.Coli"],
@@ -33,7 +34,7 @@ function Trends() {
   ];
 
   const setGraphTrends = (e, start, word) => {
-    setDiseaseData(filterByStartDateandWords(start, word, diseases));
+    setDiseaseData(filterByStartDateandEndDateandWords(start,today, word, diseases));
     showTrends(dogs => !dogs)
   };
 
@@ -92,7 +93,7 @@ function Trends() {
   };
 
   return (
-    <div className="border-popBlue lg:col-start-3 col-span-5 row-start-2 row-span-4 bg-white mr-4">
+    <div className="border-popBlue lg:col-start-3 col-span-5 row-start-2 row-span-4 bg-white mx-2 lg:mr-4">
       {verticalRows()}
     </div>
   );

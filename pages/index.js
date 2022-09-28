@@ -26,6 +26,10 @@ export default function Home({ diseases,traveldata }) {
 
   return (
     <>
+      <Head>
+        <title>Pop Council Disease Tracker</title>
+        <meta property="og:title" content="My page title" key="title" />
+      </Head>
      <GraphContext.Provider value = {{
       diseases,diseasesData,setDiseaseData,
       start, setStart, trends, showTrends,
