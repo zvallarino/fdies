@@ -163,7 +163,7 @@ function InputField() {
             />
             <label
               htmlFor={`${item}-checkbox`}
-              className="py-3 ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-300"
+              className="py-3 ml-2 w-full text-xs lg:text-sm font-medium text-gray-900 dark:text-gray-300"
             >
               {item}
             </label>
@@ -275,10 +275,10 @@ function InputField() {
   }
 
   return (
-    <div className="border border-4 border-popBlue row-start-2 row-span-3 col-span-2 bg-white shadow-md rounded mx-20 my-4 p-2">
+    <div className="grid row-start-4 row-span-3 col-span-3 mx-4 mb-4 border border-4 border-popBlue lg:row-start-2 lg:row-span-3 lg:col-span-2 bg-white shadow-md rounded lg:mx-20 lg:my-4 p-2">
       <form onSubmit={newSubmit} className=" flex-col">
 
-        <div className="bg-popGreen w-full text-center text-lg font-semibold text-white rounded">
+        <div className="bg-popGreen w-full text-center  text-sm lg:text-lg font-semibold text-white rounded">
           Legend
         </div>
 

@@ -43,7 +43,7 @@ function Trends() {
         <>
           <div
             key={month[1]}
-            className="w-1/5 h-full  bg-white rounded border-t-4 mt-0.5 border-popBlue justify-center shadow-lg max-w-sm hover:bg-red-400 "
+            className="w-1/3 m-1 lg:m-0 lg:w-1/5 h-full  bg-white rounded border-t-4 mt-0.5 border-popBlue justify-center shadow-lg max-w-sm hover:bg-red-400 "
             onClick={(e) => setGraphTrends(e, date, month[1])}
           >
             <div className="h-1/3 border text-center py-3 font-bold">
@@ -92,7 +92,7 @@ function Trends() {
   };
 
   return (
-    <div className="border-popBlue col-start-3 col-span-5 row-start-2 row-span-4 bg-white mr-4">
+    <div className="border-popBlue lg:col-start-3 col-span-5 row-start-2 row-span-4 bg-white mr-4">
       {verticalRows()}
     </div>
   );
