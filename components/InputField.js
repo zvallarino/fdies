@@ -275,7 +275,7 @@ function InputField() {
   }
 
   return (
-    <div className="grid row-start-4 row-span-3 col-span-3 mx-4 mb-4 border border-4 border-popBlue lg:row-start-2 lg:row-span-3 lg:col-span-2 bg-white shadow-md rounded lg:mx-20 lg:my-4 p-2">
+    <div className={`${trends && "hidden lg:grid"} grid row-start-4 row-span-3 col-span-3 mx-4 mb-4 border border-4 border-popBlue lg:row-start-2 lg:row-span-3 lg:col-span-2 bg-white shadow-md rounded lg:mx-20 lg:my-4 p-2`}>
       <form onSubmit={newSubmit} className=" flex-col">
 
         <div className="bg-popGreen w-full text-center  text-sm lg:text-lg font-semibold text-white rounded">
@@ -299,7 +299,7 @@ function InputField() {
           {airTravel()}
         <div className = "bg-white flex justify-center">
           <button 
-          className="border rounded bg-popBlue text-white p-2 mt-2 hover:bg-popGreen"
+          className="border rounded bg-popBlue text-white text-sm lg:text-base p-2 mt-2 hover:bg-popGreen"
           type="submit">
             Apply Filter
           </button>
@@ -308,15 +308,15 @@ function InputField() {
 
       <div className = "flex-row mt-1 text-center">
         <button 
-        className="border rounded bg-popBlue text-white p-2 hover:bg-popGreen mr-2"
+        className="border rounded bg-popBlue text-white text-sm lg:text-base p-2 hover:bg-popGreen mr-2"
         onClick = {e=>showTrends(false)}
         >Graph</button>
         <button 
-        className="border rounded bg-popBlue text-white p-2 hover:bg-popGreen mr-2"
+        className="border rounded bg-popBlue text-white text-sm lg:text-base p-2 hover:bg-popGreen mr-2"
         onClick = {e=>setProjection(!projection)}
         >Projections</button>
         <button
-        className="border rounded bg-popBlue text-white p-2 hover:bg-popGreen"
+        className="border rounded bg-popBlue text-white text-sm lg:text-base p-2 hover:bg-popGreen"
         onClick = {e=>showTrends(true)}
         >Trends</button>
       </div>
