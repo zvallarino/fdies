@@ -13,7 +13,7 @@ import {GraphContext} from "../contexts/GraphContext"
 import { filterbyEndDate } from '../components/Functions'
 import { DateTime } from 'luxon'
 
-export default function Home({ diseases,traveldata }) {
+export default function Home({ diseases }) {
   const today = DateTime.now().toISO()
   const [diseasesData, setDiseaseData] = useState(filterbyEndDate(today, diseases))
 
@@ -33,7 +33,7 @@ export default function Home({ diseases,traveldata }) {
      <GraphContext.Provider value = {{
       diseases,diseasesData,setDiseaseData,
       start, setStart, trends, showTrends,
-      travel, setTravel, traveldata,
+      travel, setTravel,
       projection, setProjection
       }} >
       <FullPage />
@@ -48,13 +48,9 @@ export async function getServerSideProps(){
   const allDisease = await getDocs(diseaseRef)
   const allDiseaseData = allDisease.docs.map(doc => doc.data())
 
-  const travelRef = collection(db,"travelair")
-  const allTravel = await getDocs(travelRef)
-  const allTravelData = allTravel.docs.map(doc => doc.data())
   return {
       props:{
           diseases: allDiseaseData,
-          traveldata: allTravelData,
       }
   }
 }
