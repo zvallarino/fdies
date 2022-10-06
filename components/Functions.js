@@ -116,7 +116,7 @@ export const createDataSetFromGO = (graphOb) => {
         data: graphOb[property],
         borderWidth: 1,
         fill: false,
-        borderColor: "red"
+        borderColor: randomColor()
       }
       dataset.push(obj)
     }
