@@ -16,64 +16,185 @@ function Seeding() {
   }
 
   const JFK_Object = [
+
+       {
+      name: "Air",
+      case_count: 80,
+      date: DateTime.fromISO("2017-01-01").toISO(),
+    },
+    {
+      name: "Air",
+      case_count: 87,
+      date: DateTime.fromISO("2017-02-01").toISO(),
+    },
     {
       name: "Air",
       case_count: 100,
-      date: DateTime.fromISO("2019-01-01").toISO(),
+      date: DateTime.fromISO("2017-03-01").toISO(),
     },
     {
       name: "Air",
-      case_count: 107,
-      date: DateTime.fromISO("2019-02-01").toISO(),
+      case_count: 103,
+      date: DateTime.fromISO("2017-04-01").toISO(),
     },
     {
       name: "Air",
-      case_count: 120,
-      date: DateTime.fromISO("2019-03-01").toISO(),
+      case_count: 103,
+      date: DateTime.fromISO("2017-05-01").toISO(),
     },
     {
       name: "Air",
-      case_count: 123,
-      date: DateTime.fromISO("2019-04-01").toISO(),
-    },
-    {
-      name: "Air",
-      case_count: 123,
-      date: DateTime.fromISO("2019-05-01").toISO(),
-    },
-    {
-      name: "Air",
-      case_count: 126,
-      date: DateTime.fromISO("2019-06-01").toISO(),
-    },
-    {
-      name: "Air",
-      case_count: 130,
-      date: DateTime.fromISO("2019-07-01").toISO(),
-    },
-    {
-      name: "Air",
-      case_count: 130,
-      date: DateTime.fromISO("2019-08-01").toISO(),
-    },
-    {
-      name: "Air",
-      case_count: 120,
-      date: DateTime.fromISO("2019-09-01").toISO(),
-    },
-    {
-      name: "Air",
-      case_count: 120,
-      date: DateTime.fromISO("2019-10-01").toISO(),
+      case_count: 106,
+      date: DateTime.fromISO("2017-06-01").toISO(),
     },
     {
       name: "Air",
       case_count: 110,
+      date: DateTime.fromISO("2017-07-01").toISO(),
+    },
+    {
+      name: "Air",
+      case_count: 110,
+      date: DateTime.fromISO("2017-08-01").toISO(),
+    },
+    {
+      name: "Air",
+      case_count: 100,
+      date: DateTime.fromISO("2017-09-01").toISO(),
+    },
+    {
+      name: "Air",
+      case_count: 100,
+      date: DateTime.fromISO("2017-10-01").toISO(),
+    },
+    {
+      name: "Air",
+      case_count: 90,
+      date: DateTime.fromISO("2017-11-01").toISO(),
+    },
+    {
+      name: "Air",
+      case_count: 100,
+      date: DateTime.fromISO("2017-12-01").toISO(),
+    },
+    {
+      name: "Air",
+      case_count: 91,
+      date: DateTime.fromISO("2018-01-01").toISO(),
+    },
+    {
+      name: "Air",
+      case_count: 100,
+      date: DateTime.fromISO("2018-02-01").toISO(),
+    },
+    {
+      name: "Air",
+      case_count: 113,
+      date: DateTime.fromISO("2018-03-01").toISO(),
+    },
+    {
+      name: "Air",
+      case_count: 114,
+      date: DateTime.fromISO("2018-04-01").toISO(),
+    },
+    {
+      name: "Air",
+      case_count: 118,
+      date: DateTime.fromISO("2018-05-01").toISO(),
+    },
+    {
+      name: "Air",
+      case_count: 121,
+      date: DateTime.fromISO("2018-06-01").toISO(),
+    },
+    {
+      name: "Air",
+      case_count: 119,
+      date: DateTime.fromISO("2018-07-01").toISO(),
+    },
+    {
+      name: "Air",
+      case_count: 115,
+      date: DateTime.fromISO("2018-08-01").toISO(),
+    },
+    {
+      name: "Air",
+      case_count: 113,
+      date: DateTime.fromISO("2018-09-01").toISO(),
+    },
+    {
+      name: "Air",
+      case_count: 117,
+      date: DateTime.fromISO("2018-10-01").toISO(),
+    },
+    {
+      name: "Air",
+      case_count: 118,
+      date: DateTime.fromISO("2018-11-01").toISO(),
+    },
+    {
+      name: "Air",
+      case_count: 113,
+      date: DateTime.fromISO("2018-12-01").toISO(),
+    },
+    {
+      name: "Air",
+      case_count: 95,
+      date: DateTime.fromISO("2019-01-01").toISO(),
+    },
+    {
+      name: "Air",
+      case_count: 97,
+      date: DateTime.fromISO("2019-02-01").toISO(),
+    },
+    {
+      name: "Air",
+      case_count: 115,
+      date: DateTime.fromISO("2019-03-01").toISO(),
+    },
+    {
+      name: "Air",
+      case_count: 103,
+      date: DateTime.fromISO("2019-04-01").toISO(),
+    },
+    {
+      name: "Air",
+      case_count: 105,
+      date: DateTime.fromISO("2019-05-01").toISO(),
+    },
+    {
+      name: "Air",
+      case_count: 108,
+      date: DateTime.fromISO("2019-06-01").toISO(),
+    },
+    {
+      name: "Air",
+      case_count: 121,
+      date: DateTime.fromISO("2019-07-01").toISO(),
+    },
+    {
+      name: "Air",
+      case_count: 131,
+      date: DateTime.fromISO("2019-08-01").toISO(),
+    },
+    {
+      name: "Air",
+      case_count: 109,
+      date: DateTime.fromISO("2019-09-01").toISO(),
+    },
+    {
+      name: "Air",
+      case_count: 111,
+      date: DateTime.fromISO("2019-10-01").toISO(),
+    },
+    {
+      name: "Air",
+      case_count: 115,
       date: DateTime.fromISO("2019-11-01").toISO(),
     },
     {
       name: "Air",
-      case_count: 120,
+      case_count: 117,
       date: DateTime.fromISO("2019-12-01").toISO(),
     },
 
@@ -197,7 +318,6 @@ function Seeding() {
       case_count: 117,
       date: DateTime.fromISO("2021-12-01").toISO(),
     },
-
     {
       name: "Air",
       case_count: 120,
@@ -243,7 +363,6 @@ function Seeding() {
       case_count: 147,
       date: DateTime.fromISO("2022-09-01").toISO(),
     },
-    ,
     {
       name: "Air",
       case_count: 146,
@@ -259,8 +378,6 @@ function Seeding() {
       case_count: 140,
       date: DateTime.fromISO("2022-12-01").toISO(),
     },
-
-    ,
     {
       name: "Air",
       case_count: 135,
@@ -306,7 +423,6 @@ function Seeding() {
       case_count: 146,
       date: DateTime.fromISO("2023-09-01").toISO(),
     },
-    ,
     {
       name: "Air",
       case_count: 140,
@@ -354,10 +470,10 @@ function Seeding() {
 
     // batch.commit();
 
-    // console.log(batchTest);
+    // console.log(JFK_Object);
   }
 
-  //   useEffect(() => {dateMaker()}, [])
+    useEffect(() => {dateMaker()}, [])
 
   return <div>Seeding</div>;
 }
