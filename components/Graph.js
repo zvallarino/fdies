@@ -87,7 +87,7 @@ function Graph() {
       }
     
   return (
-      <div className = "border border-popBlue border-4 row-start-2 row-span-2 lg:col-start-3 col-span-5 lg:row-start-2 lg:row-span-4 bg-white mb-8 lg:mr-4">
+      <div className = "border border-popBlue border-4 row-start-2 row-span-4 lg:col-start-3 col-span-5 lg:row-start-2 lg:row-span-4 bg-white mb-8 lg:mr-4">
         <Line options={options} data={data} />
       </div>
   )

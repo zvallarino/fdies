@@ -8,7 +8,7 @@ import { GraphContext } from "../contexts/GraphContext";
 function FullPage() {
   const { trends } = useContext(GraphContext);
   return (
-    <div className="bg-gray-200 grid grid-cols-3 grid-rows-6 md:grid-cols-7 md:grid-rows-5 h-screen">
+    <div className="bg-gray-200 grid grid-cols-3 grid-rows-9 md:grid-cols-7 md:grid-rows-5 h-screen">
       <Header />
       <InputField />
       {trends ? <Trends /> : <Graph />}
