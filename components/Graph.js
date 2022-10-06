@@ -32,17 +32,6 @@ function Graph() {
 
   const examplearray2 = [{"name":"nick"},{"cat":"red"}]
 
-  // const travelFilter = (obj) => {
-  //   if(travel){
-  //      return {...diseasesData,diseasesData.filter((disease ) =>
-  //       disease.name == menu.category_id)}
-  //   }else {
-  //     return obj
-  //   }
-  // }
-
-  // useEffect(()=>console.log(travelFilter(diseasesData)),[])
-
     const data_sets = datasetCreator(diseasesData)
         
       const data = {
