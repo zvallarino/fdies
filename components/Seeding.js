@@ -9,11 +9,11 @@ function Seeding() {
   };
   const firstdateOfTravel = DateTime.fromISO("2019-01-01");
 
-  function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
-  }
+  // function getRandomInt(min, max) {
+  //   min = Math.ceil(min);
+  //   max = Math.floor(max);
+  //   return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
+  // }
 
   const JFK_Object = [
 
@@ -445,7 +445,7 @@ function Seeding() {
     const firstDate = DateTime.fromISO("2017-01-01");
     const lastDate = DateTime.now();
     const difference = lastDate.diff(firstDate, "months").toObject();
-    const differenceInMonths = Math.floor(difference.months) + 16;
+    // const differenceInMonths = Math.floor(difference.months) + 16;
     const all_diseases = ["E.Coli", "Chlamydia", "HIV"];
     let i = 0;
     let batchTest = [];
@@ -455,7 +455,7 @@ function Seeding() {
       for (const element in all_diseases) {
         batchTest.push({
           name: all_diseases[element],
-          case_count: getRandomInt(0, 150),
+          // case_count: getRandomInt(0, 150),
           date: firstDate.plus({ months: i }).toISO(),
         });
       }
