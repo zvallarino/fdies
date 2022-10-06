@@ -275,7 +275,7 @@ function InputField() {
   }
 
   return (
-    <div className={`${trends && "hidden lg:grid"} grid row-start-4 row-span-3 col-span-3 mx-4 mb-4 border border-4 border-popBlue md:row-start-2 md:row-span-5 md:col-start-1 md:col-span-2 xl:row-start-2 xl:row-span-3 xl:col-span-2 bg-white shadow-md rounded xl:mx-20 xl:my-2 xl:p-2`}>
+    <div className={`${trends && "hidden lg:grid"} grid row-start-6 mb-10 row-span-3 col-span-3 mx-6 p-2 border border-4 border-popBlue md:row-start-2 md:row-span-5 md:col-start-1 md:col-span-2 xl:row-start-2 xl:row-span-3 xl:col-span-2 bg-white shadow-md rounded xl:mx-20 xl:my-2 xl:p-2`}>
       <form onSubmit={newSubmit} className=" flex-col">
 
         <div className="bg-popGreen w-full text-center  text-sm lg:text-lg font-semibold text-white rounded">

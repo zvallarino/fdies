@@ -12,7 +12,7 @@ function Header() {
               />  
             </div>
       </div>
-      <div className='border col-span-3 mx-2 md:col-span-7 md:row-span-1 md:mt-10 lg:col-span-5 lg:mt-2 xl:mt-2 xl:mr-4 '>
+      <div className='border col-span-3 row-span-1 mt-2 mx-2 md:col-span-7 md:row-span-1 md:mt-10 lg:col-span-5 lg:mt-2 xl:mt-2 xl:mr-4 '>
           <div className='flex-col text-center bg-white border border-4 border-popBlue rounded p-2'>
               <div className = "hidden lg:flex flex-col font-bold text-5xl mt-2 text-popBlue">POPULATION COUNCIL</div>
               <div className = "hidden lg:flex flex-col font-bold text-2xl text-popBlue"> Ideas. Evidence. Impact.</div>
